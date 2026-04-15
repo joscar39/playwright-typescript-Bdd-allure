@@ -1,0 +1,39 @@
+# Dependencias
+node_modules/
+
+# Compilado TypeScript
+dist/
+
+# Variables de entorno (contiene credenciales reales)
+.env
+
+# Credenciales de Google Service Account (nunca versionar)
+config/credentials/
+src/config/credentials/
+automationcf-credential-db.json
+*-credential*.json
+*-credentials*.json
+
+# Resultados y reportes de pruebas
+allure-results/
+allure-report/
+test-results/
+
+# Specs generados automáticamente por playwright-bdd (no versionar)
+.bdd-gen/
+
+# Logs
+*.log
+logs/
+
+# Archivos temporales del sistema operativo
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# Claude Code — configuración personal de máquina (no compartir)
+.claude/settings.local.json

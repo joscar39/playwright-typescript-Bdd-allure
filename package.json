@@ -1,0 +1,40 @@
+{
+  "name": "automationweb-playwright",
+  "version": "1.0.0",
+  "description": "Framework de automatización web ComunidadFeliz con Playwright + TypeScript + playwright-bdd",
+  "scripts": {
+    "pretest": "rimraf allure-results && rimraf .bdd-gen",
+    "test": "cross-env playwright test",
+    "pretest:login": "rimraf allure-results && rimraf .bdd-gen && bddgen",
+    "test:login": "cross-env playwright test --grep @Login",
+    "pretest:create-community": "rimraf allure-results && rimraf .bdd-gen && bddgen",
+    "test:create-community": "cross-env playwright test --grep @CreateCommunity",
+    "pretest:communities": "rimraf allure-results && rimraf .bdd-gen && bddgen",
+    "test:communities": "cross-env playwright test --grep @Communities",
+    "pretest:tag": "rimraf allure-results && rimraf .bdd-gen && bddgen",
+    "test:tag": "cross-env playwright test --grep",
+    "pretest:run": "rimraf allure-results && rimraf .bdd-gen && bddgen",
+    "test:run": "cross-env playwright test",
+    "allure:generate": "allure generate --clean --output allure-report allure-results",
+    "allure:open": "allure open allure-report",
+    "allure:serve": "allure serve allure-results",
+    "install:browsers": "npx playwright install chromium",
+    "typecheck": "tsc --noEmit",
+    "missing-steps": "tsx scripts/missing-steps.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "exceljs": "^4.4.0",
+    "googleapis": "^171.4.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.0",
+    "allure-playwright": "^3.6.0",
+    "cross-env": "^10.1.0",
+    "playwright-bdd": "^8.5.0",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}

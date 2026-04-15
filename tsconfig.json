@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "lib": ["ES2022", "DOM"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@pages/*": ["pages/*"],
+      "@support/*": ["support/*"],
+      "@utils/*": ["utils/*"],
+      "@config/*": ["config/*"],
+      "@step-definitions/*": ["step-definitions/*"]
+    }
+  },
+  "include": [
+    "playwright.config.ts",
+    "step-definitions/**/*.ts",
+    "pages/**/*.ts",
+    "support/**/*.ts",
+    "utils/**/*.ts",
+    "config/**/*.ts",
+    "features/**/*.ts"
+  ],
+  "exclude": ["node_modules", "dist", "allure-results", "allure-report", "src", ".bdd-gen"]
+}
