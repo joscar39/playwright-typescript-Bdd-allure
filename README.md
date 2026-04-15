@@ -1,6 +1,6 @@
-# TestsE2EWeb — Playwright + TypeScript
+# Proyecto Playwright + BDD + Allure + Typescript
 
-Suite de tests E2E para ComunidadFeliz. Usa **Playwright** con **TypeScript**, sin Cucumber/Gherkin.
+Suite de tests E2E playwright. Usa **Playwright** con **TypeScript**, sin Cucumber/Gherkin.
 
 ---
 
@@ -8,7 +8,7 @@ Suite de tests E2E para ComunidadFeliz. Usa **Playwright** con **TypeScript**, s
 
 - **Node.js 20+** — verificar con `node --version`
 - **npm 9+** — verificar con `npm --version`
-- Acceso a un entorno de ComunidadFeliz (staging o local) y credenciales de usuario de prueba
+- Acceso a un entorno de prueba (staging o local) y credenciales de usuario de prueba
 
 ---
 
@@ -38,10 +38,10 @@ Editar `.env` con los valores correspondientes al entorno a testear:
 
 ```env
 # URL base del entorno contra el que correrán los tests
-APP_URL="https://staging.comunidadfeliz.cl"
+APP_URL="https://staging.url.cl"
 
 # Credenciales del usuario de prueba (usar un usuario dedicado, no de producción real)
-TEST_EMAIL="qa.user@comunidadfeliz.cl"
+TEST_EMAIL="qa.user@yopmail.com"
 TEST_PASSWORD="contraseña-segura"
 ```
 
@@ -106,13 +106,13 @@ npx cross-env ENV=test3 BROWSER=firefox npm run test:create-community
 npx cross-env ENV=smoke BROWSER=chromium HEADLESS=true npm run test:create-community
 
 # Con credenciales diferentes
-npx cross-env EMAIL=qa2@comunidadfeliz.cl PASSWORD=OtraPass123. npm run test:create-community
+npx cross-env EMAIL=qa2@yopmail.com PASSWORD=OtraPass123. npm run test:create-community
 
 # Con tag específico (CC = Chile, SC = México)
 npx cross-env ENV=test5 BROWSER=chromium HEADLESS=false npm run test:tag -- "@CreateNewCommunityNormalCC"
 
 # Combinación completa
-npx cross-env ENV=test2 BROWSER=webkit HEADLESS=false EMAIL=qa2@comunidadfeliz.cl PASSWORD=OtraPass123. npm run test:create-community
+npx cross-env ENV=test2 BROWSER=webkit HEADLESS=false EMAIL=qa2@yopmail.com PASSWORD=OtraPass123. npm run test:create-community
 
 # Ejecutar escenarios repetidos en paralelo por tags
 npx cross-env ENV=test5 BROWSER=chromium HEADLESS=false playwright test --grep "@CreateNewCommunityNormal" --repeat-each 5
